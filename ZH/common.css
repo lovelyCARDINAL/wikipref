@@ -1,0 +1,232 @@
+@import url("https://mzh.moegirl.org.cn/index.php?title=MediaWiki:Gadget-InPageEdit-v2.css&action=raw&ctype=text/css");
+@import url("https://mzh.moegirl.org.cn/index.php?title=User:机智的小鱼君/gadget/Highlight.css&action=raw&ctype=text/css");
+/* @import url("https://mzh.moegirl.org.cn/index.php?title=User:星海子/test.css&action=raw&ctype=text/css"); */
+
+/* 用户标识 */
+sup[class^=markrights-] + sup[class^=markrights-] {
+    margin-left: 0 !important;
+}
+
+sup[class=markrights-bot] + sup[class=markrights-extendedconfirmed] {
+    display: none;
+}
+
+.markrights-staff::after {
+    color: hotpink;
+}
+
+.markrights-bureaucrat::after {
+    content: "政" !important;
+}
+
+.markBlockInfo {
+    text-decoration: none !important;
+}
+
+.detailedBlockInfo {
+    display: none;
+}
+
+/* 一般标识 */
+i {
+    margin-right: 2px;
+}
+
+.mw-plusminus-neg {
+    color: #ff2333;
+}
+
+.mw-plusminus-pos {
+    color: #00bb00;
+}
+
+span.comment {
+    font-style: normal;
+}
+
+div.mw-editfooter-list.mw-collapsible,
+div.preview-limit-report-wrapper.mw-editfooter-list.mw-collapsible {
+    display: block !important;
+}
+
+.mw-category-group li > a {
+    word-break: break-all;
+}
+
+/*
+.comment-container-top > div:not(.comment-thread) {
+    background-color: #FFB9C6;
+    color: white;
+    font-weight: bolder;
+}
+
+.comment-thread.comment-popular {
+    background-color: #FEEAF0;
+}
+
+.citation-comment {
+    display: revert !important;
+}
+*/
+
+/* InPageEdit */
+.in-page-edit-article-link {
+    color: pink;
+    -webkit-text-fill-color: pink;
+}
+
+.in-page-edit .wikiEditor-ui-toolbar,
+.in-page-edit .CodeMirror {
+    font-size: small;
+}
+
+.in-page-edit .detailArea,
+.in-page-edit .showEditNotice,
+.in-page-edit label[for="editSummary"],
+.in-page-edit div.editOptionsLabel label + br {
+    display: none !important;
+}
+
+/* 特殊效果移除 */
+.blur {
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -o-filter: none !important;
+    -ms-filter: none !important;
+    filter: none !important;
+}
+
+.mw-parser-output .mouse-ripple {
+    visibility: hidden !important;
+}
+
+/* 用户页面 */
+.other-accounts {
+    display: revert ! important;
+}
+
+/* 隐藏变动说明&帮助 */
+.mw-special-Recentchanges .mw-changeslist-legend,
+.mw-special-Recentchanges #mw-indicator-mw-helplink,
+.mw-special-Watchlist .mw-changeslist-legend,
+.mw-special-Watchlist #mw-indicator-mw-helplink {
+    display: none;
+}
+
+/* 防止清空监视列表 */
+.page-Special_编辑监视列表_clear .mw-htmlform-submit-buttons {
+    display: none;
+}
+
+/* 保证InPageEdit快速编辑按钮加载 */
+.extra-ipe-btn .in-page-edit-article-link-group {
+    display: none;
+}
+
+.extra-ipe-btn .in-page-edit-article-link-group:first-of-type {
+    display: inline;
+}
+
+.mw-special-Search .extra-ipe-btn .in-page-edit-article-link-group::before,
+.mw-special-Search .extra-ipe-btn .in-page-edit-article-link-group::after,
+.ns-14 .extra-ipe-btn .in-page-edit-article-link-group::before,
+.ns-14 .extra-ipe-btn .in-page-edit-article-link-group::after,
+.mw-special-Whatlinkshere .in-page-edit-article-link-group::before,
+.mw-special-ReplaceText .in-page-edit-article-link-group::before {
+    content: " | ";
+}
+
+.mw-special-Whatlinkshere .in-page-edit-article-link-group::after,
+.mw-special-ReplaceText .in-page-edit-article-link-group::after {
+    content: "";
+}
+
+.mw-special-Search .extra-ipe-btn,
+.mw-special-ReplaceText .extra-ipe-btn,
+.ns-14 .extra-ipe-btn {
+    font-size: 80%;
+}
+
+/* 重定向颜色 */
+.catlinks li a.mw-redirect,
+.catlinks li a.mw-redirect:visited {
+    color: #12E600;
+}
+
+a.mw-redirect {
+    color: #5BF;
+}
+
+a.mw-redirect:visited {
+    color: #4AF;
+}
+
+/* Only for Category:已重定向的分类 */
+body.rootpage-Category_已重定向的分类 div.mw-category-group > ul > li span[title] {
+    color: red;
+    font-size: 120%;
+}
+
+body.rootpage-Category_已重定向的分类 div.mw-category-group > ul > li span[title="含有0个子分类，0个页面和0个文件"] {
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Catlinks自定义 */
+#mw-normal-catlinks {
+    font-size: 92%;
+}
+
+#mw-hidden-catlinks {
+    font-size: 83%;
+}
+
+#not-listed-articles {
+    font-size: 80%;
+}
+
+/* MassEditRegex */
+.ns-14 #ca-masseditregex,
+.mw-special-Whatlinkshere #ca-masseditregex {
+    display: none;
+}
+
+/* 防止误删 */
+.page-Category_积压工作 #ca-delete,
+.page-Category_即将删除的页面 #ca-delete,
+.page-Category_受到保护无法编辑的页面 #ca-delete {
+    display: none;
+}
+
+/* backlog */
+.pageAwaitingDelection-caption {
+    display: none;
+}
+
+.blocklogevents .blocklogevents-table-caption,
+.abuselogevents .abuselogevents-table-caption {
+    background-color: transparent !important;
+}
+
+.blocklogevents .word-break-all {
+    min-width: 12em;
+}
+
+.mw-warning-with-logexcerpt {
+    word-break: break-all;
+}
+
+.adsbyezoic,
+.adsbygoogle,
+.moe-card:has(.capsule) {
+    display: none !important;
+}
+
+#moeskin-purge-notice,
+#moeskin-sitenotice {
+    display: none;
+}
+
+.tab #wikiPreview .TabContentText {
+    display: initial;
+}

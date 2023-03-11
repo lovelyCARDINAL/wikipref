@@ -1,0 +1,37 @@
+/* InPageEdit */
+#ipe-edit-toolbox {
+    transform: scale(1.32);
+    right: 50px;
+    bottom: 50px;
+}
+
+/* 侧边栏自定义 */
+#p-sidebar-categoryindex.portal,
+#p-help.portal,
+#n-mainpage-description,
+#n-randompage,
+#n-sidebar-newfiles,
+#t-log,
+#t-recentchangeslinked,
+#t-print,
+#t-viewavatar,
+#t-expandtemplates {
+    display: none;
+}
+
+
+/* 窄屏 */
+@media screen and (max-device-width: 1080px) {
+    html {
+        width: 1080px;
+    }
+
+    html {
+        -ms-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+    }
+
+    body {
+        position: relative;
+    }
+}
