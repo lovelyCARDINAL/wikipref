@@ -358,11 +358,3 @@ if (mw.config.get("wgCanonicalSpecialPageName") === "Contributions") {
     var sitereg = /m?zh(?=\.moegirl\.)/;
     $("#contentSub a:nth-child(6), #subtitle a:nth-child(6)").after(" | <a href=" + contri.replace(sitereg, "commons") + ">共享</a> | <a href=" + contri.replace(sitereg, "library") + ">文库</a> | <a href=" + contri.replace(sitereg, "en") + ">英文</a> | <a href=" + contri.replace(sitereg, "ja") + ">日文</a>");
 }
-
-/* 广告拦截
-$("*").filter(function () {
-    return $(this).css("z-index").startsWith(2147);
-}).each(function () {
-    $(this).remove();
-});
-*/
