@@ -1,6 +1,5 @@
-/* global mw, $ */
 "use strict";
-
+/* global mw, $ */
 mw.loader.load(["ext.gadget.moeskin-topbar"]);
 
 /* InpageEdit */
