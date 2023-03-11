@@ -1,5 +1,6 @@
 "use strict";
 /* global mw, $, InPageEdit */
+
 // Template:即将删除置顶
 mw.loader.load("https://commons.moegirl.org.cn/index.php?title=User:星海子/js/ContentAboveBelowImage.js&action=raw&ctype=text/javascript");
 
