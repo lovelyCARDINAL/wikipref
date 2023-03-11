@@ -1,4 +1,5 @@
 /* global mw, $ */
+"use strict";
 
 mw.loader.load(["ext.gadget.moeskin-topbar"]);
 
