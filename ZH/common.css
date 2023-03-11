@@ -217,14 +217,8 @@ body.rootpage-Category_已重定向的分类 div.mw-category-group > ul > li spa
 }
 
 .adsbyezoic,
-.adsbygoogle,
-.moe-card:has(.capsule) {
+.adsbygoogle {
     display: none !important;
-}
-
-#moeskin-purge-notice,
-#moeskin-sitenotice {
-    display: none;
 }
 
 .tab #wikiPreview .TabContentText {

@@ -1,0 +1,9 @@
+#moeskin-purge-notice,
+#moeskin-sitenotice,
+#topNotice-aboutAdvertisement {
+    display: none;
+}
+
+.moe-card:has(.capsule) {
+    display: none !important;
+}
