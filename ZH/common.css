@@ -118,6 +118,12 @@ div.preview-limit-report-wrapper.mw-editfooter-list.mw-collapsible {
     display: none;
 }
 
+/* Popups */
+tr.popup_history_row_odd,
+tr.popup_history_row_even {
+    word-break: break-all;
+}
+
 /* 保证InPageEdit快速编辑按钮加载 */
 .extra-ipe-btn .in-page-edit-article-link-group {
     display: none;
