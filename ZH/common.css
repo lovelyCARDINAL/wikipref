@@ -119,8 +119,8 @@ div.preview-limit-report-wrapper.mw-editfooter-list.mw-collapsible {
 }
 
 /* Popups */
-tr.popup_history_row_odd,
-tr.popup_history_row_even {
+.popup_history_row_odd,
+.popup_history_row_even {
     word-break: break-all;
 }
 
