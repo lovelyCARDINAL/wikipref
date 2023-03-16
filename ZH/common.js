@@ -48,9 +48,6 @@ mw.loader.load("https://mzh.moegirl.org.cn/index.php?title=User:机智的小鱼�
 //Apple 彩色幕和文字模糊刮开
 //mw.loader.load('https://mzh.moegirl.org.cn/index.php?title=User:星海子/Gadgets-apple-js.js&action=raw&ctype=text/javascript');
 
-//QuickSave for IPE user
-mw.loader.load("https://fastly.jsdelivr.net/gh/lovelyCARDINAL/wikitool@main/quickSave.min.js");
-
 //批量回退&撤销
 mw.loader.load("https://fastly.jsdelivr.net/gh/lovelyCARDINAL/wikitool/massRollback.js");
 
