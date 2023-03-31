@@ -1,9 +1,6 @@
 "use strict";
 /* global mw, $, InPageEdit */
 
-// Template:即将删除置顶
-mw.loader.load("https://commons.moegirl.org.cn/index.php?title=User:星海子/js/ContentAboveBelowImage.js&action=raw&ctype=text/javascript");
-
 /* InPageEdit */
 mw.loader.load("https://fastly.jsdelivr.net/npm/mediawiki-inpageedit");
 window.InPageEdit = window.InPageEdit || {};
@@ -82,9 +79,6 @@ mw.loader.load("https://fastly.jsdelivr.net/gh/lovelyCARDINAL/wikitool@main/mass
 //SearchLinks
 window.searchLinksSite = "https://zh.moegirl.org.cn/index.php";
 mw.loader.load("https://fastly.jsdelivr.net/gh/lovelyCARDINAL/wikitool@main/searchLinks.min.js");
-
-//queryContributions
-mw.loader.load("https://mzh.moegirl.org.cn/index.php?title=MediaWiki:Gadget-queryContributions.js&action=raw&ctype=text/javascript");
 
 /* Hotcat */
 window.hotcat_use_category_links = false;
