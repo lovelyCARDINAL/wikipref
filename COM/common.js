@@ -2,7 +2,7 @@
 /* global mw, $, InPageEdit */
 
 /* InPageEdit */
-mw.loader.load("https://fastly.jsdelivr.net/npm/mediawiki-inpageedit");
+mw.loader.load("https://testingcf.jsdelivr.net/npm/mediawiki-inpageedit");
 window.InPageEdit = window.InPageEdit || {};
 InPageEdit.myPreference = {
     "outSideClose": true,
@@ -12,11 +12,11 @@ InPageEdit.myPreference = {
     "editSummary": "    $section$oldid // Edit Via InPageEdit",
     "watchList": "nochange",
     "plugins": [
-        "https://fastly.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/toolbox.min.js",
-        "https://fastly.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/edit-any-page.min.js",
-        "https://fastly.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/quick-thank.min.js",
-        "https://fastly.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/code-mirror/script.min.js",
-        "https://fastly.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/wiki-editor.min.js"
+        "https://testingcf.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/toolbox.min.js",
+        "https://testingcf.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/edit-any-page.min.js",
+        "https://testingcf.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/quick-thank.min.js",
+        "https://testingcf.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/code-mirror/script.min.js",
+        "https://testingcf.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/wiki-editor.min.js"
     ],
     "codeMirrorTheme": (
         mw.config.get("wgNamespaceNumber") % 2 === 0
@@ -74,11 +74,11 @@ mw.loader.load("https://mzh.moegirl.org.cn/index.php?title=User:bhsd/js/wikiedit
 mw.loader.load("https://mzh.moegirl.org.cn/index.php?title=User:机智的小鱼君/gadget/Highlight.js&action=raw&ctype=text/javascript");
 
 //MassRollback
-mw.loader.load("https://fastly.jsdelivr.net/gh/lovelyCARDINAL/wikitool@main/massRollback.min.js");
+mw.loader.load("https://testingcf.jsdelivr.net/gh/lovelyCARDINAL/wikitool@main/massRollback.min.js");
 
 //SearchLinks
 window.searchLinksSite = "https://zh.moegirl.org.cn/index.php";
-mw.loader.load("https://fastly.jsdelivr.net/gh/lovelyCARDINAL/wikitool@main/searchLinks.min.js");
+mw.loader.load("https://testingcf.jsdelivr.net/gh/lovelyCARDINAL/wikitool@main/searchLinks.min.js");
 
 /* Hotcat */
 window.hotcat_use_category_links = false;

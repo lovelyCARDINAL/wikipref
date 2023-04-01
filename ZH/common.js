@@ -2,7 +2,7 @@
 /* global mw, $, InPageEdit */
 
 /* InPageEdit */
-mw.loader.load("https://fastly.jsdelivr.net/npm/mediawiki-inpageedit");
+mw.loader.load("https://testingcf.jsdelivr.net/npm/mediawiki-inpageedit");
 window.InPageEdit = window.InPageEdit || {};
 InPageEdit.myPreference = {
     "outSideClose": true,
@@ -12,11 +12,11 @@ InPageEdit.myPreference = {
     "editSummary": "    $section$oldid // Edit Via InPageEdit",
     "watchList": "nochange",
     "plugins": [
-        "https://fastly.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/toolbox.min.js",
-        "https://fastly.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/edit-any-page.min.js",
-        "https://fastly.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/quick-thank.min.js",
-        "https://fastly.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/code-mirror/script.min.js",
-        "https://fastly.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/wiki-editor.min.js"
+        "https://testingcf.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/toolbox.min.js",
+        "https://testingcf.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/edit-any-page.min.js",
+        "https://testingcf.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/quick-thank.min.js",
+        "https://testingcf.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/code-mirror/script.min.js",
+        "https://testingcf.jsdelivr.net/gh/inpageedit/Plugins@master/src/plugins/wiki-editor.min.js"
     ],
     "codeMirrorTheme": (
         mw.config.get("wgNamespaceNumber") % 2 === 0
@@ -49,10 +49,10 @@ mw.loader.load("https://mzh.moegirl.org.cn/index.php?title=User:机智的小鱼�
 //mw.loader.load('https://mzh.moegirl.org.cn/index.php?title=User:星海子/Gadgets-apple-js.js&action=raw&ctype=text/javascript');
 
 //批量回退&撤销
-mw.loader.load("https://fastly.jsdelivr.net/gh/lovelyCARDINAL/wikitool/massRollback.js");
+mw.loader.load("https://testingcf.jsdelivr.net/gh/lovelyCARDINAL/wikitool/massRollback.js");
 
 //快速查找链入
-mw.loader.load("https://fastly.jsdelivr.net/gh/lovelyCARDINAL/wikitool@main/searchLinks.min.js");
+mw.loader.load("https://testingcf.jsdelivr.net/gh/lovelyCARDINAL/wikitool@main/searchLinks.min.js");
 
 /* Hotcat */
 window.hotcat_use_category_links = false;

@@ -14,7 +14,7 @@ mw.hook("InPageEdit").add(function (ctx) {
         )
     );
 });
-mw.loader.load("https://fastly.jsdelivr.net/gh/bhsd-harry/Wikiplus-highlight@2.55.1/main.min.js");
+mw.loader.load("https://testingcf.jsdelivr.net/gh/bhsd-harry/Wikiplus-highlight@2.55.1/main.min.js");
 
 $.when(mw.loader.using(["mediawiki.util"]), $.ready)
     .then(function () {
