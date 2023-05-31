@@ -350,6 +350,13 @@ if (mw.config.get("wgCanonicalSpecialPageName") === "Undelete") {
     });
 })();
 
+// Action=history 添加版本号
+if (mw.config.get("wgAction") === "history") {
+    $("#pagehistory li[data-mw-revid]").each(function () {
+        $(this).find(".mw-changeslist-date").append(" <small>(" + $(this).data("mw-revid") + ")</small>");
+    });
+}
+
 // Special:Contributions
 if (mw.config.get("wgCanonicalSpecialPageName") === "Contributions") {
     var contri = location.href.replace(encodeURIComponent("用户贡献"), "Contributions");

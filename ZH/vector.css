@@ -35,3 +35,8 @@
         position: relative;
     }
 }
+
+/* 其他 */
+#pagehistory {
+    font-size: small;
+}
