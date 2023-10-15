@@ -83,8 +83,9 @@ window.popupSimplifyMainLink = false;
 
 /* UserMessages */
 window.AxUserMsgCustomTemplate = [
-    ["User:星海子/UserMessages/NoEdits", "NoEdits", "维护人员编辑数不足", null, "关于近期未活跃的询问"],
-    ["User:星海子/UserMessages/NoVoting", "NoVoting", "维护人员连续多次未参与投票", null, "关于近期未活跃的询问"],
+    ["User:星海子/UserMessages/PatrollerNoEdits", "NoEdits", "维护姬编辑数不足", null, "关于近期未活跃的询问"],
+    ["User:星海子/UserMessages/SysopNoEdits", "NoEdits", "管理员编辑数不足", null, "关于近期未活跃的询问"],
+    ["User:星海子/UserMessages/NoVoting", "NoVoting", "管理员连续多次未参与投票", null, "关于近期未活跃的询问"],
     ["User:星海子/UserMessages/EditGroupNoEdits", "EditGroupNoEdits", "编辑组负责人活跃度不足", 32, "关于未活跃的询问"]
 ];
 
