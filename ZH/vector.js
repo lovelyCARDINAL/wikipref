@@ -33,7 +33,7 @@ $.when(mw.loader.using(["mediawiki.util"]), $.ready)
         mw.util.addPortletLink("p-navigation", "/Special:Allmessages", "Allmessages");
         mw.util.addPortletLink("p-navigation", "/Special:Allpages?namespace=8", "界面消息");
         mw.util.addPortletLink("p-navigation", "/萌娘百科:界面脚本动态", "界面脚本动态");
-        mw.util.addPortletLink("p-navigation", "/Category:即将删除的页面", "即将删除", "t-sidebar-delete");
+        mw.util.addPortletLink("p-navigation", "https://github.com/lovelyCARDINAL/WikiBots/actions/workflows/manually.yaml", "即将删除", "t-sidebar-delete");
         if (mw.config.get("wgNamespaceNumber") >= 0) {
             mw.util.addPortletLink("p-tb", "/Special:ExpandTemplates", "展开模板", "p-sidebar-expandtemplates", null, null, "#t-specialpages");
             mw.util.addPortletLink("p-tb", "/Special:ChangeContentModel/" + mw.config.get("wgPageName"), "更改内容模型", "t-sidebar-changecontentmodel", null, null, "#t-specialpages");

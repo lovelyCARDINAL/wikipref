@@ -2,7 +2,7 @@
 /* global mw, $, InPageEdit */
 
 /* InPageEdit */
-mw.loader.load("https://npm.elemecdn.com/mediawiki-inpageedit@latest");
+mw.loader.load("https://testingcf.jsdelivr.net/npm/mediawiki-inpageedit");
 window.InPageEdit = window.InPageEdit || {};
 InPageEdit.myPreference = {
     "outSideClose": true,
@@ -59,7 +59,7 @@ $.when(mw.loader.using("mediawiki.util"), $.ready).then(function () {
     mw.util.addPortletLink("p-navigation", "/User:星海子/Gadgets", "Gadgets");
     mw.util.addPortletLink("p-navigation", "/Special:Allmessages", "Allmessages");
     mw.util.addPortletLink("p-navigation", "/Special:Allmessages?namespace=8", "界面消息");
-    mw.util.addPortletLink("p-navigation", "/Category:即将删除的页面", "即将删除", "p-sidebar-delete");
+    mw.util.addPortletLink("p-navigation", "https://github.com/lovelyCARDINAL/WikiBots/actions/workflows/manually.yaml", "即将删除", "p-sidebar-delete");
     mw.util.addPortletLink("p-tb", "/Special:替换文本", "替换文本", null, null, null, "#t-specialpages");
     mw.util.addPortletLink("p-tb", "/Special:log?page=" + mw.config.get("wgPageName"), "页面日志", null, null, null, "#t-info");
     mw.util.addPortletLink("p-tb", "/Special:前缀索引/" + mw.config.get("wgPageName"), "前缀索引", null, null, null, "#t-info");
