@@ -2,7 +2,7 @@
 /* global mw, $, InPageEdit */
 
 /* InPageEdit */
-mw.loader.load("https://testingcf.jsdelivr.net/npm/mediawiki-inpageedit");
+mw.loader.load("https://unpkg.com/mediawiki-inpageedit");
 window.InPageEdit = window.InPageEdit || {};
 InPageEdit.myPreference = {
     "outSideClose": true,
