@@ -2,7 +2,7 @@
 /* global mw, $, InPageEdit */
 
 /* InPageEdit */
-mw.loader.load("https://unpkg.com/mediawiki-inpageedit@latest/dist/InPageEdit.min.js");
+mw.loader.load("https://testingcf.jsdelivr.net/npm/mediawiki-inpageedit@latest");
 window.InPageEdit = window.InPageEdit || {};
 InPageEdit.myPreference = {
     "outSideClose": true,
@@ -28,7 +28,7 @@ InPageEdit.myPreference = {
     ) ? "solarized" : "juejin"
 };
 mw.hook("InPageEdit.quickEdit.codemirror").add(function (tabs) {
-    var cm = tabs.cm;
+    const cm = tabs.cm;
     cm.setOption("indentUnit", 4);
     cm.setOption("indentWithTabs", !/^8|274$/.test(mw.config.get("wgNamespaceNumber")));
 });
@@ -58,7 +58,7 @@ mw.loader.load("https://testingcf.jsdelivr.net/gh/lovelyCARDINAL/wikitool@main/s
 window.hotcat_use_category_links = false;
 mw.loader.using("mediawiki.user", function () {
     $("body").on("submit", "#hotcatCommitForm", function () {
-        var submitType = this.wpDiff;
+        const submitType = this.wpDiff;
         if (submitType && (!this.oldid || this.oldid.value == "0")) {
             this.wpEditToken.value = mw.user.tokens.get("csrfToken");
             submitType.name = submitType.value = "wpSave";
@@ -91,8 +91,8 @@ window.AxUserMsgCustomTemplate = [
 
 /* 屏蔽阿卡林效果 */
 $(function () {
-    var allElements = $("#mw-content-text > .mw-parser-output > *");
-    var elements = allElements.not("#toc,.infoBox,.infotemplatebox").add(allElements.filter("h2").nextAll());
+    const allElements = $("#mw-content-text > .mw-parser-output > *");
+    const elements = allElements.not("#toc,.infoBox,.infotemplatebox").add(allElements.filter("h2").nextAll());
     elements.css("opacity", 1);
 });
 
@@ -114,12 +114,12 @@ if (/Macintosh|iPhone|iPad/.test(navigator.userAgent)) {
 /* Special:Search 添加[编辑]&[历史]&[IPE] */
 if (mw.config.get("wgCanonicalSpecialPageName") === "Search") {
     $(".mw-search-result-heading > a").each(function () {
-        var href = $(this).attr("href");
+        const href = $(this).attr("href");
         if (!href) return;
         this.setAttribute("target", "_blank");
-        var editLink = href.replace(href, href + "?action=edit"),
+        const editLink = href.replace(href, href + "?action=edit"),
             hisLink = href.replace(href, href + "?action=history");
-        var $edit = $("<a>", { href: editLink, target: "_blank", text: "编辑" }),
+        const $edit = $("<a>", { href: editLink, target: "_blank", text: "编辑" }),
             $his = $("<a>", { href: hisLink, target: "_blank", text: "历史" });
         $(this).after($("<span>", { class: "extra-ipe-btn" }).append("&nbsp;&nbsp;[", $edit, $his, "]"));
         mw.hook("InPageEdit").add(function (ctx) {
@@ -168,12 +168,12 @@ if (navigator.userAgent.includes("Macintosh") && navigator.maxTouchPoints === 0)
         && mw.config.get("wgIsArticle")
         && !/^(38120|99958)$/.test(mw.config.get("wgArticleId"))) {
         $(".mw-category-generated .mw-content-ltr a").each(function () {
-            var href = $(this).attr("href");
+            const href = $(this).attr("href");
             if (!href) return;
             this.setAttribute("target", "_blank");
-            var editLink = href.replace(href, href + "?action=edit"),
+            const editLink = href.replace(href, href + "?action=edit"),
                 hisLink = href.replace(href, href + "?action=history");
-            var $edit = $("<a>", { href: editLink, target: "_blank", text: "编辑" }),
+            const $edit = $("<a>", { href: editLink, target: "_blank", text: "编辑" }),
                 $his = $("<a>", { href: hisLink, target: "_blank", text: "历史" });
             $(this).after($("<span>", { class: "extra-ipe-btn" }).append("&nbsp;&nbsp;[", $edit, $his, "]"));
             mw.hook("InPageEdit").add(function (ctx) {
@@ -184,11 +184,11 @@ if (navigator.userAgent.includes("Macintosh") && navigator.maxTouchPoints === 0)
 
     /* Special:Whatlinkshere 添加[历史] */
     if (mw.config.get("wgCanonicalSpecialPageName") !== "Whatlinkshere") {
-        var wlh = $(".mw-whatlinkshere-tools a:not(.in-page-edit-article-link)");
+        const wlh = $(".mw-whatlinkshere-tools a:not(.in-page-edit-article-link)");
         for (var i = 0, len = wlh.length; i < len; i++) {
             if (i % 2 === 1) {
-                var hishref = wlh[i].href.replace("action=edit", "action=history");
-                var $his = $("<a>", { href: hishref, target: "_blank", text: "历史" });
+                const hishref = wlh[i].href.replace("action=edit", "action=history");
+                const $his = $("<a>", { href: hishref, target: "_blank", text: "历史" });
                 $his.insertAfter(wlh[i]);
                 wlh[i].after(" | ");
             }
@@ -198,10 +198,10 @@ if (navigator.userAgent.includes("Macintosh") && navigator.maxTouchPoints === 0)
     /* Special:ReplaceText 添加[编辑]&[IPE] */
     if (mw.config.get("wgCanonicalSpecialPageName") === "ReplaceText") {
         $("form#choose_pages a").each(function () {
-            var href = $(this).attr("href");
+            const href = $(this).attr("href");
             if (!href) return;
             this.setAttribute("target", "_blank");
-            var $edit = $("<a>", { href: href.replace(href, href + "?action=edit"), target: "_blank", text: "编辑" });
+            const $edit = $("<a>", { href: href.replace(href, href + "?action=edit"), target: "_blank", text: "编辑" });
             $(this).after($("<span>", { class: "extra-ipe-btn" }).append("&nbsp;&nbsp;(", $edit, ")"));
             mw.hook("InPageEdit").add(function (ctx) {
                 ctx.InPageEdit.articleLink($edit);
@@ -212,9 +212,9 @@ if (navigator.userAgent.includes("Macintosh") && navigator.maxTouchPoints === 0)
     /* Special:Watchlist & Special:Recentchanges 添加[撤销]，点击changeslist-line打开新页面 */
     if (mw.config.get("wgCanonicalSpecialPageName") === "Watchlist" || mw.config.get("wgCanonicalSpecialPageName") === "Recentchanges") {
         $(".mw-changeslist-diff").each(function () {
-            var href = $(this).attr("href");
-            var undohref = href.replace(href, href + "&action=edit").replace("diff", "undo").replace("oldid", "undoafter");
-            var $undo = $("<a>", { href: undohref, target: "_blank", text: "撤销" });
+            const href = $(this).attr("href");
+            const undohref = href.replace(href, href + "&action=edit").replace("diff", "undo").replace("oldid", "undoafter");
+            const $undo = $("<a>", { href: undohref, target: "_blank", text: "撤销" });
             if (this.innerText === "之前") {
                 $undo.insertBefore($(this));
                 $(this).before(" | ");
@@ -237,18 +237,9 @@ if (navigator.userAgent.includes("Macintosh") && navigator.maxTouchPoints === 0)
 /* 阻止分类重定向分类中的分类重定向 */
 if (mw.config.get("wgPageName").includes("已重定向") && mw.config.get("wgNamespaceNumber") === 14 && mw.config.get("wgIsArticle")) {
     $(".CategoryTreeLabel.CategoryTreeLabelNs14.CategoryTreeLabelCategory").each(function () {
-        var href = $(this).attr("href");
-        var cathref = href.replace(href, href + "?redirect=no");
+        const href = $(this).attr("href");
+        const cathref = href.replace(href, href + "?redirect=no");
         $(this).attr("href", cathref);
-    });
-}
-
-/* 权限变更 */
-if (mw.config.get("wgArticleId") === 543137) {
-    var revid = mw.config.get("wgRevisionId");
-    $("h2 .mw-headline").click(function () {
-        var section = $(this).attr("id");
-        navigator.clipboard.writeText("[[Special:PermanentLink/" + revid + "#" + section + "]]");
     });
 }
 
@@ -271,7 +262,7 @@ if ($("#ca-wikilove").length > 0) {
 $.when(mw.loader.using(["ext.gadget.backlog"]), $.ready)
     .then(function () {
         if (mw.config.get("wgArticleId") != 38120 || !mw.config.get("wgIsArticle")) { return; }
-        var blocklogFlags = setInterval(function () {
+        const blocklogFlags = setInterval(function () {
             if ($(".blocklogevents-flags-nocreate")[0]) {
                 clearInterval(blocklogFlags);
                 $(".blocklogevents-flags-anononly").each(function () { $(this).text("anononly"); });
@@ -282,7 +273,7 @@ $.when(mw.loader.using(["ext.gadget.backlog"]), $.ready)
                 $(".blocklogevents-flags-hiddenname").each(function () { $(this).text("hiddenname"); });
             }
         }, 1000);
-        var abuselogClick = setInterval(function () {
+        const abuselogClick = setInterval(function () {
             if ($("#expand-abuselogevents")[0]) {
                 clearInterval(abuselogClick);
                 if ($(".abuselogevents.nothing-new")[0]) { $("#expand-abuselogevents").click(); }
@@ -295,7 +286,7 @@ if (mw.config.get("wgCanonicalSpecialPageName") === "Nuke") {
     $(".mw-checkbox-none").click(); // 默认全不选
     $(".mw-checkbox-invert").after("、<a class=\"mw-checkbox-betwen\" role=\"button\" tabindex=\"0\">连选</a>");
     $(".mw-checkbox-betwen").click(function () {
-        var lastcheck = $(".mw-checkbox-toggle-controls + ul > li input[type=\"checkbox\"]:checked:last").parent()[0];
+        const lastcheck = $(".mw-checkbox-toggle-controls + ul > li input[type=\"checkbox\"]:checked:last").parent()[0];
         $(".mw-checkbox-toggle-controls + ul > li input[type=\"checkbox\"]:checked:first").parent().nextUntil(lastcheck).children("input[type=\"checkbox\"]").prop("checked", true);
     });
 }
@@ -304,7 +295,7 @@ if (mw.config.get("wgCanonicalSpecialPageName") === "Nuke") {
 if (mw.config.get("wgCanonicalSpecialPageName") === "Undelete") {
     $(".mw-undelete-revlist").before("<button name=\"selectrange\" id=\"mw-undelete-selectrange\" type=\"button\" value=\"1\">连选</button>");
     $("#mw-undelete-selectrange").click(function () {
-        var lastcheck = $(".mw-undelete-revlist > li input[type=\"checkbox\"]:checked:last").parent()[0];
+        const lastcheck = $(".mw-undelete-revlist > li input[type=\"checkbox\"]:checked:last").parent()[0];
         $(".mw-undelete-revlist > li input[type=\"checkbox\"]:checked:first").parent().nextUntil(lastcheck).children("input[type=\"checkbox\"]").prop("checked", true);
     });
 }
@@ -312,7 +303,7 @@ if (mw.config.get("wgCanonicalSpecialPageName") === "Undelete") {
 /* Action=history 添加连选 */
 (function () {
     if (mw.config.get("wgAction") !== "history") return;
-    var $historylis = $("#pagehistory > li");
+    const $historylis = $("#pagehistory > li");
     if (!$historylis.length) return;
     function historyDiffRadios() {
         var nextState = "oldid", $li, $inputs, $oldidRadio, $diffRadio;
@@ -341,7 +332,7 @@ if (mw.config.get("wgCanonicalSpecialPageName") === "Undelete") {
     historyDiffRadios();
     $(".mw-checkbox-invert").after("、<a class=\"mw-checkbox-betwen\" id=\"pagehistory-selectrange\" role=\"button\" tabindex=\"0\">连选</a>");
     $("#pagehistory-selectrange").on("click", function () {
-        var checkboxes = $historylis.filter(".selected, .between").find("input[type=\"checkbox\"]"),
+        const checkboxes = $historylis.filter(".selected, .between").find("input[type=\"checkbox\"]"),
             notchecked = checkboxes.filter(":not(:checked)");
         if (notchecked.length > 0) {
             notchecked.prop("checked", true);
@@ -360,7 +351,7 @@ if (mw.config.get("wgAction") === "history") {
 
 // Special:Contributions
 if (mw.config.get("wgCanonicalSpecialPageName") === "Contributions") {
-    var contri = location.href.replace(encodeURIComponent("用户贡献"), "Contributions");
-    var sitereg = /m?zh(?=\.moegirl\.)/;
-    $("#contentSub a:nth-child(6), #subtitle a:nth-child(6)").after(" | <a href=" + contri.replace(sitereg, "commons") + ">共享</a> | <a href=" + contri.replace(sitereg, "library") + ">文库</a> | <a href=" + contri.replace(sitereg, "en") + ">英文</a> | <a href=" + contri.replace(sitereg, "ja") + ">日文</a>");
+    const contri = location.href.replace(encodeURIComponent("用户贡献"), "Contributions");
+    const siteReg = /m?zh(?=\.moegirl\.)/;
+    $("#contentSub a:nth-child(6), #subtitle a:nth-child(6)").after(" | <a href=" + contri.replace(siteReg, "commons") + ">共享</a> | <a href=" + contri.replace(siteReg, "library") + ">文库</a> | <a href=" + contri.replace(siteReg, "en") + ">英文</a> | <a href=" + contri.replace(siteReg, "ja") + ">日文</a>");
 }

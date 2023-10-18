@@ -2,7 +2,7 @@
 /* global mw, $, InPageEdit */
 
 /* InPageEdit */
-mw.loader.load("https://unpkg.com/mediawiki-inpageedit@latest/dist/InPageEdit.min.js");
+mw.loader.load("https://testingcf.jsdelivr.net/npm/mediawiki-inpageedit@latest");
 window.InPageEdit = window.InPageEdit || {};
 InPageEdit.myPreference = {
     "outSideClose": true,
@@ -28,12 +28,12 @@ InPageEdit.myPreference = {
     ) ? "solarized" : "juejin"
 };
 mw.hook("InPageEdit.quickEdit.codemirror").add(function (tabs) {
-    var cm = tabs.cm;
+    const cm = tabs.cm;
     cm.setOption("indentUnit", 4);
     cm.setOption("indentWithTabs", !/^8|274$/.test(mw.config.get("wgNamespaceNumber")));
 });
 mw.hook("InPageEdit").add(function (ctx) {
-    var InPageEdit = ctx.InPageEdit, _msg = ctx._msg, wgPageName = mw.config.get("wgRelevantPageName"), wgRevisionId = mw.config.get("wgRevisionId");
+    const InPageEdit = ctx.InPageEdit, _msg = ctx._msg, wgPageName = mw.config.get("wgRelevantPageName"), wgRevisionId = mw.config.get("wgRevisionId");
     $("#ca-edit").after(
         $("<li>", { id: "ca-quick-edit", "class": "collapsible" }).append(
             $("<span>").append($("<a>", { href: "javascript:void(0)", text: _msg("quick-edit") })
@@ -84,7 +84,7 @@ mw.loader.load("https://testingcf.jsdelivr.net/gh/lovelyCARDINAL/wikitool@main/s
 window.hotcat_use_category_links = false;
 mw.loader.using("mediawiki.user", function () {
     $("body").on("submit", "#hotcatCommitForm", function () {
-        var submitType = this.wpDiff;
+        const submitType = this.wpDiff;
         if (submitType && (!this.oldid || this.oldid.value == "0")) {
             this.wpEditToken.value = mw.user.tokens.get("csrfToken");
             submitType.name = submitType.value = "wpSave";
@@ -96,7 +96,7 @@ mw.loader.using("mediawiki.user", function () {
 // 阻止分类重定向分类的分类重定向
 if (mw.config.get("wgPageName").includes("已重定向") && mw.config.get("wgNamespaceNumber") === 14) {
     $(".CategoryTreeLabel.CategoryTreeLabelNs14.CategoryTreeLabelCategory").each(function () {
-        var cathref = $(this).attr("href").replace($(this).attr("href"), $(this).attr("href") + "?redirect=no");
+        const cathref = $(this).attr("href").replace($(this).attr("href"), $(this).attr("href") + "?redirect=no");
         $(this).attr("href", cathref);
     });
 }
@@ -106,6 +106,6 @@ if (mw.config.get("wgNamespaceNumber") == -1 && (mw.config.get("wgTitle").toLowe
 
 // Special:Contributions
 if (mw.config.get("wgCanonicalSpecialPageName") === "Contributions") {
-    var contripage = mw.config.get("wgPageName").replace("用户贡献", "Contributions");
+    const contripage = mw.config.get("wgPageName").replace("用户贡献", "Contributions");
     $("#contentSub a:nth-child(6)").before("<a href=\"/cm:" + contripage + "\">共享</a> | <a href=\"/library:" + contripage + "\">文库</a> | <a href=\"/en:" + contripage + "\">英文</a> | <a href=\"/ja:" + contripage + "\">日文</a> | ");
 }
