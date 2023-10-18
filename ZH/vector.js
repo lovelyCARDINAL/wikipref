@@ -3,7 +3,7 @@
 
 /* InpageEdit */
 mw.hook("InPageEdit").add(function (ctx) {
-    const InPageEdit = ctx.InPageEdit, _msg = ctx._msg, wgPageName = mw.config.get("wgRelevantPageName"), wgRevisionId = mw.config.get("wgRevisionId");
+    var InPageEdit = ctx.InPageEdit, _msg = ctx._msg, wgPageName = mw.config.get("wgRelevantPageName"), wgRevisionId = mw.config.get("wgRevisionId");
     $("#ca-edit").after(
         $("<li>", { id: "ca-quick-edit", "class": "collapsible" }).append(
             $("<span>").append($("<a>", { href: "javascript:void(0)", text: _msg("quick-edit") })
