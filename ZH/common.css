@@ -7,7 +7,8 @@ sup[class^=markrights-] + sup[class^=markrights-] {
     margin-left: 0 !important;
 }
 
-sup[class=markrights-bot] + sup[class=markrights-extendedconfirmed] {
+sup[class=markrights-bot] + sup[class=markrights-extendedconfirmed],
+sup[class=markrights-suppress] + sup[class=markrights-sysop]:has(+sup[class=markrights-bot]) {
     display: none;
 }
 
